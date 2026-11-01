@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="ar"><head><meta charset="utf-8"><title>Clinic Command</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+<style>
+:root{--bg:#eef2f7;--fg:#14202e;--pn:#fff;--bd:#cfd8e2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161d;--fg:#e8eef5;--pn:#1a232d;--bd:#2c3a49}}
+:root[data-theme="dark"]{--bg:#10161d;--fg:#e8eef5;--pn:#1a232d;--bd:#2c3a49}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif}
+#bar{display:flex;gap:8px;padding:8px;flex-wrap:wrap;justify-content:center}
+button{font:600 16px 'IBM Plex Sans Arabic',Tahoma,sans-serif;padding:10px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--pn);color:var(--fg)}
+button.p{background:#2a6aa5;color:#fff;border:0}
+#box{margin:0 auto;overflow:hidden}
+#sc{transform-origin:0 0;width:1485px;height:720px}
+#cv{position:relative;width:1485px;height:720px;direction:rtl;background:linear-gradient(135deg,#dbe9f6,#f6fafe 55%,#e3eef9);color:#1b2b3d;font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;overflow:hidden}
+#cv *{box-sizing:border-box}
+.ab{position:absolute}
+.pn{position:absolute;background:#fff;border:1.5px solid #cfdbe8;border-radius:22px;box-shadow:0 4px 14px #1b3f6a22}
+.hb{margin:12px;height:46px;border-radius:10px;background:linear-gradient(#3a7cb5,#245f94);color:#fff;font-weight:700;font-size:24px;line-height:46px;text-align:center}
+.gr{position:absolute;inset:72px 12px 12px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:12px}
+.gi{position:absolute;inset:72px 12px 12px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:12px}
+.cd{background:#fff;border:1.5px solid #cfd8e2;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 6px #1b3f6a18}
+.ch{background:#e9eef3;display:flex;justify-content:space-around;align-items:center;direction:ltr;font-weight:700;font-size:26px;padding:8px 0;flex:none}
+.cg{display:grid;grid-template-columns:1fr 1fr;direction:ltr;gap:10px 0;padding:10px 14px;justify-items:center;align-items:center}
+.ct{width:48px;height:48px;border-radius:50%;color:#fff;font-weight:700;font-size:24px;line-height:48px;text-align:center;font-style:normal;box-shadow:inset 0 -3px 5px #0003}
+.wl{font-size:20px}
+.cdt{border-top:1.5px solid #dbe2ea;margin:4px 10px 0;padding-top:6px;font-weight:600;font-size:17px;line-height:1.35}
+.pt{font-size:14px;margin-top:4px}
+.em{background:#e6edf4;border-style:dashed;padding:10px;font-size:15px;font-weight:600;gap:4px}
+.t{background:#e9eef3;text-align:center;font-weight:700;font-size:21px;padding:7px 4px;flex:none}
+.v{font-weight:700;font-size:36px;text-align:center;padding:10px 4px 2px}
+.s{font-size:15px;font-weight:600;text-align:center;padding:0 8px 8px;line-height:1.3}
+.dot{display:inline-block;width:20px;height:20px;border-radius:50%;margin-left:8px;vertical-align:middle}
+.pp{position:absolute;inset:72px 12px 12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pp .v{font-size:34px;padding-top:22px}
+#ed{position:fixed;left:0;right:0;bottom:0;max-height:78vh;overflow:auto;background:var(--pn);border-top:2px solid #2a6aa5;padding:10px 12px calc(14px + env(safe-area-inset-bottom,0px));z-index:5;direction:rtl}
+#ed[hidden],#ov[hidden]{display:none}
+details{border:1px solid var(--bd);border-radius:10px;margin:6px 0;padding:6px 10px}
+summary{font-weight:700;padding:6px 0}
+label{display:block;margin:8px 0;font-size:14px}
+input,select,textarea{width:100%;font:16px 'IBM Plex Sans Arabic',Tahoma,sans-serif;padding:8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--fg)}
+input[type=checkbox]{width:22px;height:22px}
+.st{display:flex;gap:6px}.st button{padding:6px 16px}
+#ov{position:fixed;inset:0;background:#000d;z-index:9;overflow:auto;text-align:center;color:#fff;padding:12px}
+#ov img{max-width:100%;border-radius:8px;background:#fff}
+</style></head><body>
+<div id="bar"><button class="p" id="be">✏️ EDIT</button><button class="p" id="bx">EXPORT PNG</button><span id="msg" style="align-self:center;font-size:14px"></span></div>
+<div id="box"><div id="sc"><div id="cv"></div></div></div>
+<div id="ed" hidden><div id="fm"></div><div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="p" id="bs">حفظ / Save</button><button id="bc">إلغاء / Cancel</button><button id="br">Reset sample</button></div></div>
+<div id="ov" hidden><p>اضغط مطولاً على الصورة ← حفظ في الصور / Long-press the image to save to Photos</p><img alt="report"><p><button id="bsh">Share</button> <button id="bcl">Close</button></p></div>
+<script>
+const KEY='cc_v1',$=s=>document.querySelector(s);
+const col={g:'#3b9b6d',b:'#3f86b8',r:'#b01c2e',o:'#ee9a3a',x:'#9aa5ae'};
+const cn={g:'أخضر',b:'أزرق',r:'أحمر',o:'برتقالي',x:'رمادي'};
+const C=(a,w,det,pts,name,icon,wt)=>({name,icon,c:a.map(([v,k])=>({v,k})),wait:w,wt:wt||'الانتظار',det,pts});
+const SAMPLE=()=>({hdr:{provider:'كيرلينك',hospital:'مستشفى بريدة المركزي',dept:'قسم الطوارئ',title:'التقرير الميداني اليومي',team:'فريق منسقي الرعاية (كيرلينك)'},
+hideDetails:false,showLegend:false,legend:{g:'',b:'',r:'',o:'',x:''},
+cats:{trauma:C([['4','g'],['','b'],['4','r'],['','b']],true,'تفاصيل: لا يوجد','','Trauma','✋'),
+acute:C([['17','g'],['','b'],['6','g'],['0','g']],false,'تفاصيل: متابعة مستمرة','','Acute','❤️'),
+fast:C([['4','g'],['','b'],['9','o'],['','b']],true,'تفاصيل: متابعة مستمرة','','Fast','⏱️'),
+resus:C([['2','r'],['','b'],['','b'],['','g']],false,'تفاصيل: بيانات مريض الإنعاش (2 cases)','1. م.ص | ملف: 100001\n2. ف.م | ملف: 100002','Resus','⚠️'),
+rta:C([['1','b'],['','b'],['','g'],['0','g']],false,'تفاصيل: ميداني','','RTA','🚗')},
+ind:{ras:{st:'on',d:'يعمل بكفاءة'},red:{n:'3',h:'تم الاستقبال والتعامل',d:''},amb:{st:'on',d:'على رأس العمل'},
+fail:{n:'0',d:'جميع الأجهزة والأنظمة تعمل'},per:{n:'48',p:'(من بداية الفترة)',d:'زيادة طفيفة في أعداد المراجعين'},day:{n:'238',m:'60'}},
+ppl:{sup:'مشرف الفترة (مثال)',coord:'منسق (مثال)',shift:'مشرف مناوب (مثال)'}});
+let D,snap,T='--:--',rs=false;
+try{D=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!D||!D.cats)D=SAMPLE();
+const esc=s=>String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const get=(o,p)=>p.split('.').reduce((a,k)=>a?.[k],o);
+const set=(o,p,v)=>{const k=p.split('.'),l=k.pop();get(o,k.join('.')||'')&&0;k.reduce((a,x)=>a[x],o)[l]=v};
+function tick(){try{T=new Intl.DateTimeFormat('ar-SA-u-nu-latn',{hour:'2-digit',minute:'2-digit',hour12:true,timeZone:'Asia/Riyadh'}).format(new Date())}catch(e){T=new Date().toLocaleTimeString()}render()}
+function card(c){const s=c.c.map((x,i)=>i==3&&c.wait?`<b class="wl">${esc(c.wt)}</b>`:`<i class="ct" style="background:${col[x.k]}">${esc(x.v)||'·'}</i>`).join('');
+const p=(!D.hideDetails&&c.pts.trim())?`<div class="pt">${c.pts.split('\n').filter(Boolean).map(esc).join('<br>')}</div>`:'';
+return `<div class="cd"><div class="ch"><span>${c.icon}</span>${esc(c.name)}</div><div class="cg">${s}</div><div class="cdt">${esc(c.det)}${p}</div></div>`}
+const ic=(t,v,s,dot)=>`<div class="cd"><div class="t">${t}</div><div class="v">${dot?`<span class="dot" style="background:${dot}"></span>`:''}${v}</div><div class="s">${s}</div></div>`;
+function render(){const h=D.hdr,i=D.ind,k=D.cats,p=D.ppl;
+const ras=i.ras.st=='on',am={on:['متواجد','#3b9b6d'],off:['غير متواجد','#b01c2e'],busy:['في مهمة','#ee9a3a']}[i.amb.st];
+const lg=D.showLegend?`<div class="cd em"><b>دليل الألوان</b>${Object.keys(col).map(x=>`<div><span class="dot" style="width:14px;height:14px;background:${col[x]}"></span>${esc(D.legend[x])||cn[x]}</div>`).join('')}</div>`:`<div class="cd em"></div>`;
+const rf=Math.max(1,+i.day.m||60);
+$('#cv').innerHTML=`
+<div class="ab" style="left:40px;top:22px;direction:ltr;display:flex;align-items:center;gap:14px"><div style="width:122px;height:122px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8fc3ee,#2f6fb0 70%);box-shadow:0 4px 10px #1b3f6a44"></div><b style="font-size:48px;color:#2a6aa5">${esc(h.provider)}</b></div>
+<div class="ab" style="left:365px;top:30px;width:2px;height:90px;background:#c9d6e3"></div>
+<div class="ab" style="left:390px;width:700px;top:26px;text-align:center"><div style="font-size:38px;font-weight:700;color:#1f3d5c">📊 ${esc(h.title)} - ${esc(h.dept)}</div><div style="font-size:23px;font-weight:600;margin-top:10px;color:#1f3d5c">${esc(h.team)} - ${esc(h.hospital)}</div></div>
+<div class="ab" style="right:40px;top:28px;width:245px;height:92px;background:#fff;border:1.5px solid #cfdbe8;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:700">وقت التحديث: ${T}</div>
+<div class="pn" style="left:40px;top:137px;width:685px;height:553px"><div class="hb">توزيع الحالات وحالات الانتظار</div><div class="gr">${card(k.fast)}${card(k.acute)}${card(k.trauma)}${lg}${card(k.rta)}${card(k.resus)}</div></div>
+<div class="pn" style="left:748px;top:137px;width:697px;height:348px"><div class="hb">المؤشرات التشغيلية والخدمات المساندة</div><div class="gi">
+${ic('تغطية المسعف',am[0],esc(i.amb.d),am[1])}${ic('حالات الهلال الأحمر',esc(i.red.n)+' حالات',esc(i.red.h)+(i.red.d?' — '+esc(i.red.d):''))}${ic('RAS',ras?'مفعل':'غير مفعل',esc(i.ras.d),ras?'#3b9b6d':'#b01c2e')}
+${ic('مجموع المستفيدين اليوم',esc(i.day.n)+' مستفيد','تحديث البيانات كل '+rf+' دقيقة')}${ic('مجموع المستفيدين <small>'+esc(i.per.p)+'</small>',esc(i.per.n)+' حالة',esc(i.per.d))}${ic('الأعطال',(+i.fail.n?esc(i.fail.n):'0 (لا يوجد)'),esc(i.fail.d))}</div></div>
+<div class="pn" style="left:748px;top:500px;width:697px;height:190px"><div class="hb">تفاصيل الفترة والمسؤولين</div><div class="pp">${ic('مسؤول الفترة:',esc(p.sup),'')}${ic('منسق:',esc(p.coord),'')}${ic('المشرف المناوب:',esc(p.shift),'')}</div></div>`}
+function fit(){const s=Math.max(innerWidth-16,360)/1485;$('#sc').style.transform=`scale(${s})`;$('#box').style.width=1485*s+'px';$('#box').style.height=720*s+'px'}
+const F=(p,l,t='t',o)=>({p,l,t,o});
+const colOpts=Object.keys(col).map(k=>[k,cn[k]]);
+function secs(){const S=[['الترويسة',[F('hdr.provider','الجهة المقدمة'),F('hdr.hospital','المستشفى'),F('hdr.dept','القسم'),F('hdr.title','عنوان التقرير'),F('hdr.team','الفريق')]]];
+for(const k in D.cats){const p='cats.'+k,f=[F(p+'.name','الاسم')];for(let i=0;i<4;i++)f.push(F(`${p}.c.${i}.v`,'عداد '+(i+1),'n'),F(`${p}.c.${i}.k`,'لون عداد '+(i+1),'s',colOpts));f.push(F(p+'.wait','«الانتظار» مكان العداد 4','b'),F(p+'.wt','نص الانتظار'),F(p+'.det','التفاصيل'),F(p+'.pts','سجلات المرضى (سطر لكل مريض: أحرف أولى + رقم ملف)','a'));S.push([D.cats[k].name,f])}
+S.push(['المؤشرات التشغيلية',[F('ind.ras.st','RAS','s',[['on','مفعل'],['off','غير مفعل']]),F('ind.ras.d','وصف RAS'),F('ind.red.n','الهلال الأحمر: عدد','n'),F('ind.red.h','حالة المعالجة'),F('ind.red.d','وصف'),F('ind.amb.st','تغطية المسعف','s',[['on','متواجد'],['off','غير متواجد'],['busy','في مهمة']]),F('ind.amb.d','وصف التغطية'),F('ind.fail.n','الأعطال','n'),F('ind.fail.d','وصف الأعطال'),F('ind.per.n','مستفيدو الفترة','n'),F('ind.per.p','وصف الفترة'),F('ind.per.d','ملاحظة'),F('ind.day.n','مستفيدو اليوم','n'),F('ind.day.m','فاصل التحديث (دقائق)','n')]]);
+S.push(['المسؤولون',[F('ppl.sup','مسؤول الفترة'),F('ppl.coord','منسق'),F('ppl.shift','المشرف المناوب')]]);
+S.push(['العرض والخصوصية',[F('hideDetails','إخفاء سجلات المرضى من التقرير','b'),F('showLegend','إظهار دليل الألوان','b'),...Object.keys(col).map(x=>F('legend.'+x,'معنى '+cn[x]))]]);return S}
+function fld(f){const v=get(D,f.p),a=`data-p="${f.p}"`;
+if(f.t=='n')return `<label>${f.l}<div class="st"><button ${a} data-d="-1">−</button><input inputmode="numeric" ${a} value="${esc(v)}"><button ${a} data-d="1">+</button></div></label>`;
+if(f.t=='s')return `<label>${f.l}<select ${a}>${f.o.map(([k,n])=>`<option value="${k}"${k==v?' selected':''}>${n}</option>`).join('')}</select></label>`;
+if(f.t=='a')return `<label>${f.l}<textarea rows="3" ${a}>${esc(v)}</textarea></label>`;
+if(f.t=='b')return `<label><input type="checkbox" ${a}${v?' checked':''}> ${f.l}</label>`;
+return `<label>${f.l}<input ${a} value="${esc(v)}"></label>`}
+function openEd(){snap=JSON.stringify(D);$('#fm').innerHTML=secs().map(([t,f])=>`<details><summary>${esc(t)}</summary>${f.map(fld).join('')}</details>`).join('');$('#ed').hidden=false}
+$('#fm').addEventListener('input',e=>{const p=e.target.dataset.p;if(!p)return;set(D,p,e.target.type=='checkbox'?e.target.checked:e.target.value);render()});
+$('#fm').addEventListener('click',e=>{const b=e.target.closest('button[data-d]');if(!b)return;const i=b.parentNode.querySelector('input'),n=Math.max(0,(parseInt(i.value)||0)+ +b.dataset.d);i.value=n;set(D,b.dataset.p,String(n));render()});
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){$('#msg').textContent='تعذر الحفظ المحلي'}};
+$('#be').onclick=openEd;
+$('#bs').onclick=()=>{save();$('#ed').hidden=true};
+$('#bc').onclick=()=>{D=JSON.parse(snap);render();$('#ed').hidden=true};
+$('#br').onclick=e=>{if(!rs){rs=true;e.target.textContent='اضغط مرة أخرى للتأكيد';setTimeout(()=>{rs=false;e.target.textContent='Reset sample'},3000);return}rs=false;D=SAMPLE();save();render();openEd()};
+let url='';
+$('#bx').onclick=async()=>{const m=$('#msg');m.textContent='...';try{const o={pixelRatio:2472/1485,width:1485,height:720,cacheBust:true,style:{transform:'none',margin:'0'}};await htmlToImage.toPng($('#cv'),o);url=await htmlToImage.toPng($('#cv'),o);$('#ov img').src=url;$('#ov').hidden=false;m.textContent=''}catch(e){m.textContent='فشل التصدير: '+(e.message||e)}};
+$('#bcl').onclick=()=>$('#ov').hidden=true;
+$('#bsh').onclick=async()=>{try{const b=await (await fetch(url)).blob(),f=new File([b],'clinic-report.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]}))await navigator.share({files:[f]});else $('#msg').textContent='المشاركة غير مدعومة: احفظ الصورة بالضغط المطول'}catch(e){}};
+addEventListener('resize',fit);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick()});
+fit();tick();setInterval(tick,30000);
+</script></body></html>
